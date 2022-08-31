@@ -19,3 +19,4 @@ pprint(device)
 print("\n----------USING F-STRING-------")
 for key, value in device.items():
     print(f"{key:>16s} : {value}")
+
