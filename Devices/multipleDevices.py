@@ -19,3 +19,15 @@ for index in range(100):
             + choice(string.ascii_letters)
             )
 
+#random vendor from choices: Juniper, Cisco, Huawei, Arista
+device["vendor"] = choice(["cisco", "juniper", "Arista"])
+if device["vendor"] == "cisco":
+    device["os"] = choice(["nexus", "ios", "iosxe", "iosxr"])
+    device["version"] = choice(["15.88x", "12.98(1).74", "20.45"])
+elif device["vendor"] == "juniper":
+    device["os"] = "junos"
+    device["version"] = choice(["38.90", "6.03", "40.24.3"])
+elif device["vendor"] == "Arista":
+    device["os"] = "aos"
+    device["version"] = choice(["34.90.1", "9.06", "78.53"])
+device["ip"]
