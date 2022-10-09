@@ -1,6 +1,6 @@
 from random import choice 
 import string
-from tabulate import tabulate #pip install tabulate as it is not a default package
+import tabulate #pip install tabulate as it is not a default package
 from operator import itemgetter
 from pprint import pprint
 
@@ -30,4 +30,16 @@ elif device["vendor"] == "juniper":
 elif device["vendor"] == "Arista":
     device["os"] = "aos"
     device["version"] = choice(["34.90.1", "9.06", "78.53"])
-device["ip"]
+device["ip"] = "10.0.0." + str(index)
+
+print()
+for key, value in device.items():
+    print(f"{key:>16s}: {value}") 
+
+#Add the device to the list
+devices.append(device)
+print(devices)
+
+
+# Using tabulate to print devices
+print(tabulate(sorted(devices, key=itemgetter("vendor", "os", "version")), headers="keys"))
