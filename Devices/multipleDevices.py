@@ -2,7 +2,7 @@ from random import choice
 import string
 import tabulate #pip install tabulate as it is not a default package
 from operator import itemgetter
-from pprint import pprint
+from pprint import pprint #an inbuilt function
 
 devices = list() #An empty list to store the devices
 #devices = []
